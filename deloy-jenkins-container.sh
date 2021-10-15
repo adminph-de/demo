@@ -1,7 +1,8 @@
 
-# create Jenkins Container
+# run Jenkins Container as last, official version (DockerHub)
 docker run --name jenkins -p 8080:8080 -p 50000:50000 -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 
+# run Jenkins Container as pre- created variant of the last offical version
 docker run --name jenkins -p 8080:8080 -p 50000:50000 -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins-master:alpha-1.0
 
 # install DOCKER
