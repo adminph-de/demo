@@ -1,0 +1,425 @@
+./Common/cfn/gito-iam.yml:    Type: AWS::IAM::Role
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::Group
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::User
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::UserToGroupAddition
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::ManagedPolicy
+./Common/cfn/iam-CFNPipelineRole.yml:                - AccId: !Sub '${AWS::AccountId}'
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::Role
+./Common/cfn/iam-CFNPipelineRole.yml:              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:root"
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::ManagedPolicy
+./Common/cfn/iam-CFNPipelineRole.yml:              Resource: !Sub 'arn:aws:s3:::sam-source-code-${AWS::AccountId}/*'
+./Common/cfn/iam-CFNPipelineRole.yml:    Type: AWS::IAM::ManagedPolicy
+./Common/cfn/s3-SAMSourceBucket.yml:    Type: AWS::S3::Bucket
+./Common/cfn/s3-SAMSourceBucket.yml:      BucketName: !Sub ${S3BucketName}-${AWS::AccountId}
+./Common/cfn/s3-SAMSourceBucket.yml:    Type: AWS::S3::BucketPolicy
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::VPC::Id
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53::HostedZone
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-euc1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-euc1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-euc1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-euc1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-euc1.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-euc1.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-euc1.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-euc1.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-euc1.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::VPC::Id
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::Subnet::Id
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-use1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-use1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-use1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-use1.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-use1.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-use1.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-use1.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-use1.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-use1.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverEndpoint
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-usw2.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-usw2.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-usw2.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-usw2.yml:        - Ip: !FindInMap [RegionMapResolverRule, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRule
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::Route53Resolver::ResolverRuleAssociation
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: AWS::EC2::SecurityGroup
+./DNS/cfn/r53-privatedns-usw2.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-usw2.yml:        - CidrIp:  !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps1] 
+./DNS/cfn/r53-privatedns-usw2.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-usw2.yml:        - CidrIp: !FindInMap [RegionMapSecurityGroup, !Ref "AWS::Region", TargetIps2] 
+./DNS/cfn/r53-privatedns-usw2.yml:    Type: "AWS::RAM::ResourceShare"
+./DNS/cfn/r53-privatedns-usw2.yml:        - !Sub 'arn:aws:route53resolver:${AWS::Region}:${AWS::AccountId}:resolver-rule/${CORPResolverRuleCloud}'
+./DNS/cfn/r53-privatedns-usw2.yml:        - !Sub 'arn:aws:route53resolver:${AWS::Region}:${AWS::AccountId}:resolver-rule/${CORPResolverRuleCORP}' 
+./DNS/cfn/r53-privatedns-usw2.yml:        - !Sub 'arn:aws:route53resolver:${AWS::Region}:${AWS::AccountId}:resolver-rule/${CORPResolverRuleReverse}' 
+./DNS/cfn/r53-privatedns-usw2.yml:        - !Sub 'arn:aws:route53resolver:${AWS::Region}:${AWS::AccountId}:resolver-rule/${CORPResolverRuleAWS}'       
+./DNS/cfn/r53-publicdns-euc1.yml:    Type: AWS::Route53::HostedZone
+./DNS/cfn/r53-publicdns-euc1.yml:      Name: !Sub "${AWS::StackName}-HostedZoneId"
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::VPC
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::Subnet
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::Subnet
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::Subnet
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::DHCPOptions
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::VPCDHCPOptionsAssociation
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::RouteTable
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::Route
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::TransitGatewayAttachment
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::FlowLog
+./DNS/cfn/vpc.yml:    Type: AWS::Logs::LogGroup
+./DNS/cfn/vpc.yml:    Type: AWS::EC2::FlowLog
+./DNS/cfn/vpc.yml:    Type: "AWS::IAM::Role"
+./Example/cfn/example.yml:    Type: AWS::IAM::Role
+./Example/sam/MoveAccountsLambda/sam.yml:Transform: "AWS::Serverless-2016-10-31"
+./Example/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Events::Rule
+./Example/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Lambda::Permission
+./Example/sam/MoveAccountsLambda/sam.yml:    Type: AWS::IAM::Role
+./Example/sam/MoveAccountsLambda/sam.yml:    Type: AWS::IAM::Policy
+./Example/sam/MoveAccountsLambda/sam.yml:            Resource: !Sub arn:aws:logs:eu-central-1:${AWS::AccountId}:*
+./Example/sam/MoveAccountsLambda/sam.yml:            Resource: !Sub arn:aws:logs:eu-central-1:${AWS::AccountId}:log-group:/aws/lambda/${LambdaName}:*
+./Example/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Serverless::Function
+./LogArchive/cfn/s3.yml:    Type: AWS::IAM::Role
+./LogArchive/cfn/s3.yml:                    !Ref 'AWS::AccountId'
+./LogArchive/cfn/s3.yml:                    !Ref 'AWS::AccountId'
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::Bucket
+./LogArchive/cfn/s3.yml:      BucketName: !Join ['-', ['s3-accesslogs-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::Bucket
+./LogArchive/cfn/s3.yml:      BucketName: !Join ['-', ['vpcflowlog-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        DestinationBucketName: !Join ['-', ['s3-accesslogs-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        LogFilePrefix: !Join ['', ['vpcflowlog-logarchive-', !Ref 'AWS::AccountId', '/']]
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::Bucket
+./LogArchive/cfn/s3.yml:      BucketName: !Join ['-', ['cloudtraillog-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        DestinationBucketName: !Join ['-', ['s3-accesslogs-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        LogFilePrefix: !Join ['', ['cloudtraillog-logarchive-', !Ref 'AWS::AccountId', '/']]
+./LogArchive/cfn/s3.yml:    Type: "AWS::S3::Bucket"
+./LogArchive/cfn/s3.yml:      BucketName: !Join ['', ['config-', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        DestinationBucketName: !Join ['-', ['s3-accesslogs-logarchive', !Ref 'AWS::AccountId']]
+./LogArchive/cfn/s3.yml:        LogFilePrefix: !Join ['', ['config-logarchive-', !Ref 'AWS::AccountId', '/']]
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::BucketPolicy
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::BucketPolicy
+./LogArchive/cfn/s3.yml:                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::BucketPolicy
+./LogArchive/cfn/s3.yml:                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+./LogArchive/cfn/s3.yml:    Type: AWS::S3::BucketPolicy
+./LogArchive/cfn/s3.yml:                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+./Master/cfn/cloudability-iam.yml:    Type: 'AWS::IAM::Role'
+./Master/cfn/enterprise-support-enabler.yml:    Type: 'AWS::Lambda::Function'
+./Master/cfn/enterprise-support-enabler.yml:    Type: 'AWS::IAM::Role'
+./Master/cfn/enterprise-support-enabler.yml:    Type: 'AWS::IAM::Policy'
+./Master/cfn/enterprise-support-enabler.yml:    Type: 'AWS::Events::Rule'
+./Master/cfn/enterprise-support-enabler.yml:    Type: 'AWS::Lambda::Permission'
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::ManagedPolicy'
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::ManagedPolicy'
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::Role'
+./Master/cfn/iam-Algosec.yml:        - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/GPSAlgosecReadOnlyPolicy'
+./Master/cfn/iam-Algosec.yml:        - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/GPSAlgosecWritePolicy'
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::Role'
+./Master/cfn/iam-Algosec.yml:        - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/CloudFlowReadOnly'
+./Master/cfn/iam-Algosec.yml:#        - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/CloudFlowWrite'
+./Master/cfn/iam-Algosec.yml:        - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/CloudFlowReadFlowLogs' 
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::ManagedPolicy'
+./Master/cfn/iam-Algosec.yml:#    Type: 'AWS::IAM::ManagedPolicy'
+./Master/cfn/iam-Algosec.yml:    Type: 'AWS::IAM::ManagedPolicy'
+./Master/cfn/iam-Algosec.yml:              - !Join ['', ['arn:aws:s3:::', 'vpc-flowlog-', !Ref 'AWS::AccountId', '-*']]
+./Master/cfn/iam-all.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam-all.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-all.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam-all.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-all.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::ManagedPolicy"
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::Role"
+./Master/cfn/iam-all.yml:        - !Sub "arn:aws:iam::${AWS::AccountId}:policy/McAfeeCWSPolicy"
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::ManagedPolicy"
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::Role"
+./Master/cfn/iam-all.yml:        - !Sub "arn:aws:iam::${AWS::AccountId}:policy/McafeeFlowLoggerPolicy"
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::ManagedPolicy"
+./Master/cfn/iam-all.yml:    Type: "AWS::IAM::Role"
+./Master/cfn/iam-ListOrgAccounts.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam-ListOrgAccounts.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-SCPManagementRole.yml:    Type: AWS::IAM::User
+./Master/cfn/iam-SCPManagementRole.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-SCPManagementRole.yml:                - AccId: !Sub '${AWS::AccountId}'
+./Master/cfn/iam-SCPManagementRole.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam-SCPManagementRole.yml:              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:root"
+./Master/cfn/iam-SCPManagementRole.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:account/o-*/*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:policy/o-*/service_control_policy/p-*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:ou/o-*/ou-*"
+./Master/cfn/iam-SCPManagementRole.yml:              Resource: !Sub "arn:aws:organizations::${AWS::AccountId}:root/o-*/r-*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:account/o-*/*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:ou/o-*/ou-*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:root/o-*/r-*"
+./Master/cfn/iam-SCPManagementRole.yml:                - !Sub "arn:aws:organizations::${AWS::AccountId}:policy/o-*/service_control_policy/p-*"
+./Master/cfn/iam-TurbotReadOnlyPRD.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-TurbotReadOnlyPRD.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/cfn/iam-TurbotReadOnlyPRD.yml:    Type: AWS::IAM::Role
+./Master/cfn/iam.yml:    Type: AWS::IAM::Role
+./Master/cfn/manage_account_email.yml:    Type: AWS::DynamoDB::Table
+./Master/cfn/manage_account_email.yml:    Type: AWS::S3::Bucket
+./Master/cfn/manage_account_email.yml:      BucketName: !Sub 'account-email-management-${AWS::AccountId}'
+./Master/cfn/manage_account_email.yml:    Type: AWS::SNS::Topic
+./Master/cfn/manage_account_email.yml:    Type: AWS::IAM::Role
+./Master/cfn/manage_account_email.yml:    Type: AWS::IAM::Policy
+./Master/cfn/manage_account_email.yml:    Type: AWS::Lambda::Function
+./Master/cfn/manage_account_email.yml:    Type: AWS::Lambda::Function
+./Master/cfn/splunkalarms.yml:    Type: AWS::SNS::Topic
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::MetricFilter
+./Master/cfn/splunkalarms.yml:    Type: AWS::CloudWatch::Alarm
+./Master/cfn/splunkalarms.yml:    Type: AWS::IAM::Role
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::LogGroup
+./Master/cfn/splunkalarms.yml:    Type: AWS::Logs::LogStream
+./Master/cfn/splunkalarms.yml:    Type: AWS::KinesisFirehose::DeliveryStream
+./Master/cfn/splunkalarms.yml:    Type: AWS::KinesisFirehose::DeliveryStream
+./Master/cfn/splunkalarms.yml:    Type: AWS::IAM::Role
+./Master/cfn/splunkalarms.yml:    Type: AWS::Lambda::Permission
+./Master/cfn/splunkalarms.yml:    Type: AWS::Lambda::Function
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupGITOAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupLOBAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupLOBAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupSTANDARDAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupSTANDARDAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupSTANDARDAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/sso-permset/sso-PSGroupSTANDARDAccess-cf.yml:    Type: AWS::SSO::PermissionSet
+./Master/cfn/Stack-Skyhigh-ReadOnly.yml:    Type: 'AWS::IAM::Role'
+./Master/sam/CloudabilitySyncLambda/sam.yml:Transform: AWS::Serverless-2016-10-31
+./Master/sam/CloudabilitySyncLambda/sam.yml:    Type: AWS::SecretsManager::Secret
+./Master/sam/CloudabilitySyncLambda/sam.yml:    Type: AWS::Serverless::Function
+./Master/sam/MoveAccountsLambda/sam.yml:Transform: "AWS::Serverless-2016-10-31"
+./Master/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Events::Rule
+./Master/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Lambda::Permission
+./Master/sam/MoveAccountsLambda/sam.yml:    Type: AWS::IAM::Role
+./Master/sam/MoveAccountsLambda/sam.yml:    Type: AWS::IAM::Policy
+./Master/sam/MoveAccountsLambda/sam.yml:            Resource: !Sub arn:aws:logs:eu-central-1:${AWS::AccountId}:*
+./Master/sam/MoveAccountsLambda/sam.yml:            Resource: !Sub arn:aws:logs:eu-central-1:${AWS::AccountId}:log-group:/aws/lambda/${LambdaName}:*
+./Master/sam/MoveAccountsLambda/sam.yml:    Type: AWS::Serverless::Function
+./Master/sam/SSOAssignmentLambda/sam.yml:Transform:  AWS::Serverless-2016-10-31 
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::SNS::Topic
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::Role
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::Serverless::Function
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::Lambda::Permission
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::Role
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::Serverless::Function
+./Master/sam/SSOAssignmentLambda/sam.yml:          PermSetLambdaRegion: !Ref 'AWS::Region'
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::Lambda::Permission
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::ManagedPolicy
+./Master/sam/SSOAssignmentLambda/sam.yml:    Type: AWS::IAM::ManagedPolicy
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::KeyPair::KeyName
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::Instance
+./Network/cfn/ec2-csr1000v.yml:      ImageId: !FindInMap [AWSRegionAMI, !Ref "AWS::Region", HVM64]
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::EIP
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::NetworkInterface
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::EIPAssociation
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::SecurityGroup  
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::NetworkInterface
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::SecurityGroup  
+./Network/cfn/ec2-csr1000v.yml:    Type: AWS::EC2::Route
+./Network/cfn/tgw-dx-euc1.yml:    Type: AWS::EC2::TransitGateway
+./Network/cfn/tgw-dx-euc1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-dx-euc1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-dx-euc1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-dx-use1.yml:    Type: AWS::EC2::TransitGateway
+./Network/cfn/tgw-dx-use1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-dx-use1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-dx-use1.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::VPC
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Subnet
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Subnet
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Subnet
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Subnet
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::DHCPOptions
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::VPCDHCPOptionsAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::InternetGateway
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::VPCGatewayAttachment
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::RouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Route
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::RouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::Route
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetRouteTableAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAcl
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetNetworkAclAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetNetworkAclAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAcl
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::NetworkAclEntry
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetNetworkAclAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::SubnetNetworkAclAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::FlowLog
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::Logs::LogGroup
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::FlowLog
+./Network/cfn/tgw-transit-usw2.yml:    Type: "AWS::IAM::Role"
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGateway
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRouteTable
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayAttachment
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRoute
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRoute
+./Network/cfn/tgw-transit-usw2.yml:    Type: AWS::EC2::TransitGatewayRouteTableAssociation
+./Network/cfn/tgw-transit-usw2.yml:    Type: "AWS::RAM::ResourceShare"
+./Network/cfn/tgw-transit-usw2.yml:        - !Sub 'arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:transit-gateway/${TransitGateway}'
+./Security/cfn/config-aggregator.yml:      - !Ref AWS::AccountId
+./Security/cfn/config-aggregator.yml:      - !Ref AWS::Region
+./Security/cfn/config-aggregator.yml:      - !Ref AWS::AccountId
+./Security/cfn/config-aggregator.yml:    Type: "AWS::S3::Bucket"
+./Security/cfn/config-aggregator.yml:      BucketName: !Join ['', ['config-', !Ref 'AWS::AccountId']]
+./Security/cfn/config-aggregator.yml:    Type: AWS::IAM::ManagedPolicy
+./Security/cfn/config-aggregator.yml:    Type: AWS::IAM::Role
+./Security/cfn/config-aggregator.yml: #       - !If [CreateAuthorization, !Ref ConfigPolicy, !Ref AWS::NoValue]
+./Security/cfn/config-aggregator.yml:    Type: AWS::Config::ConfigurationRecorder
+./Security/cfn/config-aggregator.yml:    Type: AWS::Config::DeliveryChannel
+./Security/cfn/config-aggregator.yml:    Type: AWS::Config::ConfigurationAggregator
+./Security/cfn/config-aggregator.yml:    Type: AWS::Config::AggregationAuthorization
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::Lambda::Function'
+./Security/cfn/GuardDuty-SplunkHEC.yml:          - !Ref 'AWS::Region'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::KinesisFirehose::DeliveryStream'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::IAM::Role'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::IAM::Policy'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::S3::Bucket'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::IAM::Role'
+./Security/cfn/GuardDuty-SplunkHEC.yml:                        - !Ref 'AWS::Region'
+./Security/cfn/GuardDuty-SplunkHEC.yml:                        - !Ref 'AWS::Region'
+./Security/cfn/GuardDuty-SplunkHEC.yml:                        - !Ref 'AWS::AccountId'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::IAM::Role'
+./Security/cfn/GuardDuty-SplunkHEC.yml:    Type: 'AWS::Events::Rule'
+./Security/cfn/iam-GPSAlgosecUser.yml:    Type: 'AWS::IAM::User'
+./Security/cfn/iam-GPSAlgosecUser.yml:    Type: 'AWS::IAM::ManagedPolicy'
+./Security/cfn/iam-McAfeeCWSUser.yml:    Type: 'AWS::IAM::User'
+./Security/cfn/iam-McAfeeCWSUser.yml:    Type: 'AWS::IAM::Policy'
+./Security/cfn/kms-logarchivebucket.yml:    Type: AWS::KMS::Key
+./Security/cfn/kms-logarchivebucket.yml:                - !Sub "arn:aws:iam::${AWS::AccountId}:root"
+./Security/cfn/kms-logarchivebucket.yml:    Type: AWS::KMS::Alias
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:    Type: 'AWS::IAM::User'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:    Type: 'AWS::S3::Bucket'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:          - !Ref 'AWS::AccountId'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:    Type: 'AWS::IAM::Policy'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:    Type: 'AWS::S3::BucketPolicy'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+./Security/cfn/s3-PlixerVPCFlowlogsReplica.yml:                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::Lambda::Function'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:          - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::KinesisFirehose::DeliveryStream'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::IAM::Policy'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::S3::Bucket'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:                        - !Ref 'AWS::AccountId'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-EU-Central-1-Prod.yml:    Type: 'AWS::Events::Rule'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::Lambda::Function'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:          - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::KinesisFirehose::DeliveryStream'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::IAM::Policy'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::S3::Bucket'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:                        - !Ref 'AWS::AccountId'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-eu-west-1-prod.yml:    Type: 'AWS::Events::Rule'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::Lambda::Function'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:          - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::KinesisFirehose::DeliveryStream'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::IAM::Policy'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::S3::Bucket'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:                        - !Ref 'AWS::AccountId'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-US-East-1-Prod.yml:    Type: 'AWS::Events::Rule'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::Lambda::Function'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:          - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::KinesisFirehose::DeliveryStream'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::IAM::Policy'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::S3::Bucket'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:                        - !Ref 'AWS::Region'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:                        - !Ref 'AWS::AccountId'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::IAM::Role'
+./Security/legacy/GuardDuty-SplunkHEC-us-west-2-prod.yml:    Type: 'AWS::Events::Rule'
